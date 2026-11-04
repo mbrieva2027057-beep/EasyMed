@@ -1,10 +1,7 @@
+import Register from "./pages/Register";
+ 
 function App() {
-  return (
-    <div>
-      <h1>EasyMed</h1>
-      <p>Medical Information Hub</p>
-    </div>
-  );
+return <Register />;
 }
-
+ 
 export default App;
