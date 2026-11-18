@@ -8,7 +8,7 @@ function Login() {
         <h1>Welcome back</h1>
 
         <input
-            type="text"
+            type="email"
             placeholder="email"
         />
 
@@ -16,7 +16,7 @@ function Login() {
         <br />
 
         <input
-            type="text"
+            type="password"
             placeholder="password"
         />
 

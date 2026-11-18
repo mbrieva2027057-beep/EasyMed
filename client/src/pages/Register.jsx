@@ -9,6 +9,7 @@ function Register({}) {
     const [password, setPassword] = useState("");
 
     const handleRegister = async () => {
+        console.log("BUTTON CLICKED");
 
         const userData = {
             firstName,
