@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 
-function Register({}) {
+function Register({goToLogin}) {
 
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
@@ -30,6 +30,12 @@ function Register({}) {
     );
 
     console.log("Sent");    
+    const result = await response.text();
+    console.log(result);
+
+    if (response.ok) {
+        goToLogin();
+}
     }
     return (
         <div>
@@ -79,7 +85,13 @@ function Register({}) {
         <button onClick={handleRegister}>
             Register
         </button>
-        </div>
+        <br />
+    <br />
+    <p>Already have an account?</p>
+    <button onClick={goToLogin}>
+        Go to login
+    </button>
+    </div>
     );
 }
 

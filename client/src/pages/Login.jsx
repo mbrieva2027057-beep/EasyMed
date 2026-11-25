@@ -1,6 +1,6 @@
 import { useState } from "react";
  
-function Login() {
+function Login({ setLoggedIn, goToRegister, /*goToHome*/}) {
  
 const [email, setEmail] = useState("");
 const [password, setPassword] = useState("");
@@ -24,8 +24,13 @@ const [password, setPassword] = useState("");
         );
          
         const result = await response.text();
-         
         console.log(result);
+        if (result === "Login Successful") {
+            setLoggedIn(true);
+        }
+        
+
+
 };
  
 return (
@@ -54,6 +59,12 @@ onChange={(e) => setPassword(e.target.value)}
  
 <button onClick={handleLogin}>
 Login
+</button>
+<br />
+<br />
+<p>Don't have an account?</p>
+<button onClick={goToRegister}>
+Go to register
 </button>
 </div>
 );
