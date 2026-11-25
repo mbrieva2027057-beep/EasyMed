@@ -1,5 +1,9 @@
 // cd server
 // node server.js
+
+//git add .
+//git commit -m "what I did"
+// git push
 const express = require("express");
 const cors = require("cors");
 const db = require("./database");
@@ -8,7 +12,15 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-
+    app.post("/appointments", (req, res) => {
+     
+        const {
+        appointmentDate,
+        notes
+    } = req.body;
+    console.log(req.body);
+    res.send("Appointment Received");
+});
 app.post("/Login", (req, res) => {
 
     const { email, password } = req.body;
